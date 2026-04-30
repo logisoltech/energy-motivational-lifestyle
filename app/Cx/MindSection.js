@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function MindSection() {
   return (
-    <section className="w-full bg-white py-10 sm:py-14">
+    <section id="about" className="w-full bg-white py-10 sm:py-14 scroll-mt-28">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-5 sm:px-8 md:flex-row md:items-center md:justify-center md:gap-20 lg:px-12">
         <div className="w-full max-w-xl md:w-104 md:max-w-none lg:w-md">
           <Image

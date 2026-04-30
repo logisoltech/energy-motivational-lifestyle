@@ -9,11 +9,11 @@ const CARDS = [
 
 export default function FutureSwimSection() {
   return (
-    <section id="applications" className="w-full bg-white pb-12 pt-4 md:pb-16">
+    <section id="gallery" className="w-full bg-white pb-12 pt-4 md:pb-16 scroll-mt-28">
       <div className="relative w-full">
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CARDS.map(({ src, alt }) => (
-            <div key={src} className="relative h-[26rem] overflow-hidden sm:h-[36rem] lg:h-[44rem]">
+            <div key={src} className="relative h-104 overflow-hidden sm:h-144 lg:h-176">
             <Image
               src={src}
               alt={alt}

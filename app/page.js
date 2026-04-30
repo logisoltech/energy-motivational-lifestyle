@@ -9,7 +9,7 @@ export default function Home() {
     <div className="min-h-screen w-full overflow-x-hidden">
       <Hero/>
       <MindSection/>
-      <FlyerDesignSection title={"Power Up"} imageSrc={"/flyer.png"} imageAlt={"Old Vs New"} sectionId={"old-vs-new"} />
+      <FlyerDesignSection title={"Power Up"} imageSrc={"/flyer.png"} imageAlt={"Old Vs New"} sectionId={"power-up"} />
       <FutureSwimSection/>
       <Footer/>    
     </div>
