@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const LINKS = [
   { label: "About", href: "#about" },
-  { label: "Power Up", href: "#power-up" },
+  { label: "Power Up", href: "#hero" },
   { label: "Gallery", href: "#gallery" },
   { label: "Applications", href: "#gallery" },
 ];
@@ -43,32 +44,62 @@ export default function Nav() {
   };
 
   return (
-    <>
-      {/* Hamburger button (mobile only) */}
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        aria-controls="mobile-menu"
-        className="absolute right-5 top-6 z-40 inline-flex size-11 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white shadow-lg backdrop-blur-md transition hover:bg-black/55 sm:hidden"
-        data-aos="fade-down"
-        data-aos-delay="150"
-      >
-        {open ? (
-          <FaTimes className="size-5" aria-hidden />
-        ) : (
-          <FaBars className="size-5" aria-hidden />
-        )}
-      </button>
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/80 bg-[#FCF9E3]">
+      <div className="mx-auto flex h-20 w-full max-w-[1536px] items-center justify-between gap-4 px-5 sm:h-22 md:h-24 sm:px-8">
+        <a href="/" className="shrink-0" aria-label="Home">
+          <Image
+            src="/logo.png"
+            alt="Institutional Lifestyle"
+            width={400}
+            height={130}
+            className="h-14 w-auto sm:h-16 md:h-20 lg:h-24"
+            priority
+          />
+        </a>
 
-      {/* Mobile overlay menu */}
+        <nav
+          className="hidden flex-1 justify-center sm:flex"
+          aria-label="Primary"
+        >
+          <ul className="flex items-center justify-center gap-x-10 lg:gap-x-14">
+            {LINKS.map(({ label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  onClick={(e) => handleClick(e, href)}
+                  className="relative inline-block cursor-pointer text-sm font-normal tracking-wide whitespace-nowrap text-neutral-800 transition-colors hover:text-neutral-950 after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-neutral-100 text-neutral-900 shadow-sm transition hover:bg-neutral-200 sm:hidden"
+        >
+          {open ? (
+            <FaTimes className="size-5" aria-hidden />
+          ) : (
+            <FaBars className="size-5" aria-hidden />
+          )}
+        </button>
+
+        <div className="hidden w-30 shrink-0 sm:block" aria-hidden />
+      </div>
+
       <div
         id="mobile-menu"
         role="dialog"
         aria-modal="true"
         aria-label="Primary navigation"
-        className={`fixed inset-0 z-30 flex flex-col items-center justify-center gap-2 bg-black/85 backdrop-blur-md transition-opacity duration-300 sm:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-black/90 backdrop-blur-md transition-opacity duration-300 sm:hidden ${
           open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -76,7 +107,7 @@ export default function Nav() {
       >
         <ul className="flex flex-col items-center gap-7">
           {LINKS.map(({ label, href }) => (
-            <li key={href}>
+            <li key={label}>
               <a
                 href={href}
                 onClick={(e) => handleClick(e, href)}
@@ -88,28 +119,6 @@ export default function Nav() {
           ))}
         </ul>
       </div>
-
-      {/* Desktop pill nav */}
-      <nav
-        className="absolute left-1/2 top-8 z-30 hidden -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-20 py-3 shadow-lg backdrop-blur-md sm:block"
-        aria-label="Primary"
-        data-aos="fade-down"
-        data-aos-delay="150"
-      >
-        <ul className="flex items-center justify-center gap-x-14">
-          {LINKS.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                onClick={(e) => handleClick(e, href)}
-                className="relative inline-block cursor-pointer text-sm font-normal tracking-wide text-white/95 whitespace-nowrap transition-colors hover:text-white after:pointer-events-none after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    </header>
   );
 }

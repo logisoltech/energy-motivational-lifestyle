@@ -4,10 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
 
-const CARDS = [
+const IMAGES = [
   { src: "/banner-1.png", alt: "Flyer parked near a pool" },
   { src: "/banner-2.png", alt: "Top view of pool and flyer pads" },
-  { src: "/banner-3.png", alt: "Future flyer concept cockpit view" },
 ];
 
 export default function FutureSwimSection() {
@@ -17,53 +16,57 @@ export default function FutureSwimSection() {
     <>
       <section
         id="gallery"
-        className="w-full bg-white pb-12 pt-4 md:pb-16 scroll-mt-28"
+        className="w-full scroll-mt-28 bg-white pb-12 pt-4 md:pb-16"
       >
-        <div className="relative w-full">
+        <div className="relative mx-auto w-full max-w-[1536px] px-5 sm:px-8 lg:px-12">
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CARDS.map(({ src, alt }) => (
+            {IMAGES.map(({ src, alt }) => (
               <button
                 key={src}
                 type="button"
                 onClick={() => setActiveImage({ src, alt })}
-                className="relative h-104 overflow-hidden sm:h-144 lg:h-176 group"
+                className="group relative h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176"
               >
                 <Image
                   src={src}
                   alt={alt}
                   fill
-                  className="object-cover object-center transition duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+                  className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                 />
               </button>
             ))}
+
+            <div className="flex min-h-104 flex-col justify-center py-8 sm:col-span-2 sm:min-h-144 lg:col-span-1 lg:min-h-176 lg:py-0 lg:pr-4">
+              <h2 className="max-w-3xl text-balance text-3xl leading-[1.05] font-extrabold uppercase tracking-tight text-neutral-900 sm:text-[2.55rem]">
+                1 DRINK FOOD-DIET-ENERGY
+              </h2>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-neutral-700 md:text-[1.05rem]">
+                The M.D.I Motivational Drink is a high-performance protein energy
+                beverage designed to fuel both body and mind. Formulated with
+                essential nutrients and energy-boosting elements, it supports
+                strength, endurance, and mental focus throughout the day. With a
+                science-inspired blend aimed at optimizing your body’s natural
+                energy processes, M.D.I is built for individuals who want to stay
+                active, sharp, and motivated in every moment.
+              </p>
+            </div>
           </div>
-
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-white/85 to-transparent sm:w-28"
-            aria-hidden
-          />
-
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-white/85 to-transparent sm:w-28"
-            aria-hidden
-          />
         </div>
       </section>
 
-      {/* fullscreen image modal */}
       {activeImage && (
-        <div className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-4">
           <button
             type="button"
             onClick={() => setActiveImage(null)}
-            className="absolute top-5 right-5 text-white hover:text-gray-300 transition"
+            className="absolute top-5 right-5 text-white transition hover:text-gray-300"
             aria-label="Close image"
           >
             <FaTimes className="size-7" />
           </button>
 
-          <div className="relative w-full max-w-7xl h-[90vh]">
+          <div className="relative h-[90vh] w-full max-w-7xl">
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
