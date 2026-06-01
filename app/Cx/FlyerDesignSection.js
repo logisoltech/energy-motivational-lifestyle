@@ -20,7 +20,7 @@ export default function FlyerDesignSection() {
       <video
         ref={videoRef}
         className="block h-auto w-full object-contain"
-        src="/vid.mp4"
+        src="/Can-edit-03.mp4"
         autoPlay
         muted
         playsInline
