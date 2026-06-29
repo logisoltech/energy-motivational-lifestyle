@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
+import NutritionFactsLabel from "./NutritionFactsLabel";
 
-const IMAGES = [
-  { src: "/banner-1.png", alt: "Flyer parked near a pool" },
-  { src: "/banner-2.png", alt: "Top view of pool and flyer pads" },
-];
+const GALLERY_IMAGE = {
+  src: "/banner-1.png",
+  alt: "Flyer parked near a pool",
+};
 
 export default function FutureSwimSection() {
   const [activeImage, setActiveImage] = useState(null);
@@ -19,25 +20,36 @@ export default function FutureSwimSection() {
         className="w-full scroll-mt-28 bg-white pb-12 pt-4 md:pb-16"
       >
         <div className="relative mx-auto w-full max-w-[1536px] px-5 sm:px-8 lg:px-12">
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {IMAGES.map(({ src, alt }) => (
-              <button
-                key={src}
-                type="button"
-                onClick={() => setActiveImage({ src, alt })}
-                className="group relative h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176"
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  fill
-                  className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
-                  sizes="(max-width: 1024px) 50vw, 33vw"
-                />
-              </button>
-            ))}
+          <div className="grid w-full grid-cols-1 items-center gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+            <button
+              type="button"
+              onClick={() => setActiveImage(GALLERY_IMAGE)}
+              className="group relative h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176"
+            >
+              <Image
+                src={GALLERY_IMAGE.src}
+                alt={GALLERY_IMAGE.alt}
+                fill
+                className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+              />
+            </button>
 
-            <div className="flex min-h-104 flex-col justify-center py-8 sm:col-span-2 sm:min-h-144 lg:col-span-1 lg:min-h-176 lg:py-0 lg:pr-4">
+            <div className="relative h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176">
+              <Image
+                src="/banner-2.png"
+                alt="M.D.I Motivational Drink can"
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+              />
+            </div>
+
+            <div className="flex justify-center sm:col-span-2 lg:col-span-1">
+              <NutritionFactsLabel />
+            </div>
+
+            <div className="flex min-h-104 flex-col justify-center py-4 sm:col-span-2 sm:min-h-144 lg:col-span-1 lg:min-h-176 lg:py-0">
               <h2 className="max-w-3xl text-balance text-3xl leading-[1.05] font-extrabold uppercase tracking-tight text-neutral-900 sm:text-[2.55rem]">
                 1 DRINK FOOD-DIET-ENERGY
               </h2>
@@ -56,7 +68,7 @@ export default function FutureSwimSection() {
       </section>
 
       {activeImage && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-4">
+        <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/90 p-4">
           <button
             type="button"
             onClick={() => setActiveImage(null)}
