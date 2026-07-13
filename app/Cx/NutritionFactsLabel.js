@@ -92,7 +92,7 @@ export default function NutritionFactsLabel({ className = "" }) {
       <ThickBar />
 
       <div className="border-b border-black">
-        <GridCell left="Vitamin A %" right="Fokate %" />
+        <GridCell left="Vitamin A %" right="Folate %" />
         <ThinBar />
         <GridCell left="B12" right="Zinc" />
         <ThinBar />
@@ -118,7 +118,7 @@ export default function NutritionFactsLabel({ className = "" }) {
         <ThinBar />
         <GridCell left="Potassium mg" right="Flavor %" />
         <ThinBar />
-        <GridCell left="Caffeine" right="" />
+        <GridCell left="Caffeine" right="Magnesium mg" />
       </div>
 
       <ThickBar />
