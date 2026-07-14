@@ -95,7 +95,20 @@ export default function Nav() {
           )}
         </button>
 
-        <div className="hidden w-30 shrink-0 sm:block" aria-hidden />
+        <div className="hidden shrink-0 items-center gap-3 sm:flex">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-5 py-2.5 text-sm font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
+          >
+            Invest / Donate
+          </a>
+          <a
+            href="#"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#E0A82E] bg-neutral-900 px-5 py-2.5 text-sm font-bold text-[#F4CE5E] shadow-sm transition hover:bg-neutral-800"
+          >
+            Buy M.D Crypto
+          </a>
+        </div>
       </div>
 
       <div
@@ -122,6 +135,23 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <a
+            href="#"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-7 py-3 text-base font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
+          >
+            Invest / Donate
+          </a>
+          <a
+            href="#"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#E0A82E] bg-neutral-900 px-7 py-3 text-base font-bold text-[#F4CE5E] shadow-sm transition hover:bg-neutral-800"
+          >
+            Buy M.D Crypto
+          </a>
+        </div>
       </div>
     </header>
   );
