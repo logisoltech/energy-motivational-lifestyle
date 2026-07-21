@@ -27,9 +27,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] w-full overflow-hidden sm:min-h-[75vh]">
+    <section className="relative min-h-[80vh] w-full overflow-hidden sm:min-h-[85vh]">
       <Image
-        src="/hero-bg.png"
+        src="/hero bg.png"
         alt=""
         fill
         className="object-cover object-center"

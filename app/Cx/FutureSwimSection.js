@@ -37,7 +37,7 @@ export default function FutureSwimSection() {
 
             <div className="relative h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176">
               <Image
-                src="/compressed-can.png"
+                src="/can-comp.png"
                 alt="M.D.I Motivational Drink can"
                 fill
                 className="object-contain object-center"
