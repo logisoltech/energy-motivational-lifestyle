@@ -19,24 +19,23 @@ export default function FutureSwimSection() {
         id="gallery"
         className="w-full scroll-mt-28 bg-white pb-12 pt-4 md:pb-16"
       >
-        <div className="relative mx-auto w-full max-w-[1536px] px-5 sm:px-8 lg:px-12">
-          <div className="grid w-full grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="relative mx-auto flex w-full max-w-[1536px] flex-col items-center gap-4 px-5 sm:px-8 lg:flex-row lg:items-start lg:justify-center lg:gap-3 lg:px-6">
             <button
               type="button"
               onClick={() => setActiveImage(GALLERY_IMAGE)}
-              className="group relative z-20 h-104 w-full overflow-hidden bg-white sm:h-144 lg:h-176"
+              className="group relative z-20 h-112 w-full max-w-[300px] shrink-0 overflow-hidden bg-white sm:h-152 lg:h-184 lg:max-w-[320px]"
             >
               <Image
                 src={GALLERY_IMAGE.src}
                 alt={GALLERY_IMAGE.alt}
                 fill
                 className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
-                sizes="(max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 1024px) 50vw, 28vw"
               />
             </button>
 
-            <div className="relative z-0 h-104 w-full overflow-visible sm:h-144 lg:h-176">
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[130%] w-[130%] -translate-x-1/2 -translate-y-1/2">
+            <div className="relative z-0 h-112 w-full max-w-[300px] shrink-0 overflow-visible sm:h-152 lg:h-184 lg:max-w-[320px]">
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/can-comp.png"
                   alt="M.D.I Motivational Drink can"
@@ -47,13 +46,14 @@ export default function FutureSwimSection() {
               </div>
             </div>
 
-            <div className="relative z-20 flex justify-center sm:col-span-2 lg:col-span-1">
+            <div className="relative z-20 shrink-0">
               <NutritionFactsLabel />
             </div>
 
-            <div className="relative z-20 flex min-h-104 flex-col justify-start pt-2 sm:col-span-2 sm:min-h-144 lg:col-span-1 lg:min-h-176 lg:pt-4">
-              <h2 className="max-w-3xl text-balance text-3xl leading-[1.05] font-extrabold uppercase tracking-tight text-neutral-900 sm:text-[2.55rem]">
-                1 DRINK FOOD-DIET-ENERGY
+            <div className="relative z-20 flex w-full max-w-md shrink-0 flex-col justify-start pt-2 lg:max-w-sm lg:pt-4">
+              <h2 className="text-3xl leading-[1.05] font-extrabold uppercase tracking-tight text-neutral-900 sm:text-[2.55rem]">
+                <span className="block whitespace-nowrap">1 DRINK FOOD-DIET</span>
+                <span className="block whitespace-nowrap">ENERGY</span>
               </h2>
               <h2 className="mt-3 text-3xl leading-[1.05] font-extrabold tracking-tight text-neutral-900 sm:text-[2.55rem]">
                 <span className="block whitespace-nowrap">For Meal or Drink</span>
@@ -69,7 +69,6 @@ export default function FutureSwimSection() {
                 active, sharp, and motivated in every moment.
               </p>
             </div>
-          </div>
         </div>
       </section>
 
