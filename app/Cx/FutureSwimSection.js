@@ -19,7 +19,7 @@ export default function FutureSwimSection() {
         id="gallery"
         className="w-full scroll-mt-28 bg-white pb-12 pt-4 md:pb-16"
       >
-        <div className="relative mx-auto flex w-full max-w-[1536px] flex-col items-center gap-4 px-5 sm:px-8 lg:flex-row lg:items-start lg:justify-center lg:gap-3 lg:px-6">
+        <div className="relative mx-auto flex w-full max-w-[1536px] flex-col items-center gap-4 px-5 sm:px-8 lg:flex-row lg:items-start lg:justify-center lg:gap-4 lg:px-6">
             <button
               type="button"
               onClick={() => setActiveImage(GALLERY_IMAGE)}
@@ -34,14 +34,14 @@ export default function FutureSwimSection() {
               />
             </button>
 
-            <div className="relative z-0 h-112 w-full max-w-[300px] shrink-0 overflow-visible sm:h-152 lg:h-184 lg:max-w-[320px]">
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2">
+            <div className="relative z-0 h-112 w-full max-w-[240px] shrink-0 overflow-visible sm:h-152 lg:h-184 lg:max-w-[220px]">
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[165%] w-[220%] -translate-x-1/2 -translate-y-1/2 lg:w-[240%]">
                 <Image
-                  src="/can-comp.png"
+                  src="/new%20can.png"
                   alt="M.D.I Motivational Drink can"
                   fill
                   className="object-contain object-center"
-                  sizes="(max-width: 1024px) 60vw, 35vw"
+                  sizes="(max-width: 1024px) 70vw, 40vw"
                 />
               </div>
             </div>
