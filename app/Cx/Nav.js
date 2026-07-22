@@ -45,7 +45,7 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200/80 bg-[#FCF9E3]">
-      <div className="mx-auto flex h-20 w-full max-w-[1536px] items-center justify-between gap-4 px-5 sm:h-22 md:h-24 sm:px-8">
+      <div className="mx-auto flex h-24 w-full max-w-[1536px] items-center justify-between gap-4 px-5 sm:h-28 md:h-32 sm:px-8">
         <a
           href="https://motivational-lifestyle.vercel.app/"
           className="shrink-0"
@@ -56,7 +56,7 @@ export default function Nav() {
             alt="Institutional Lifestyle"
             width={400}
             height={130}
-            className="h-14 w-auto sm:h-16 md:h-20 lg:h-24"
+            className="h-20 w-auto sm:h-24 md:h-28 lg:h-32"
             priority
           />
         </a>
