@@ -98,7 +98,7 @@ export default function Nav() {
         <div className="hidden shrink-0 items-center gap-3 sm:flex">
           <a
             href="#"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-5 py-2.5 text-sm font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-5 py-2.5 text-base leading-none font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
           >
             Invest / Donate
           </a>
@@ -140,7 +140,7 @@ export default function Nav() {
           <a
             href="#"
             onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-7 py-3 text-base font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-b from-[#F4CE5E] to-[#E0A82E] px-7 py-3 text-lg leading-none font-bold text-neutral-900 shadow-sm transition hover:brightness-105"
           >
             Invest / Donate
           </a>
