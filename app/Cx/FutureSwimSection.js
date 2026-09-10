@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
-import NutritionFactsLabel from "./NutritionFactsLabel";
 
 const GALLERY_IMAGE = {
   src: "/banner-1.png",
@@ -46,8 +45,15 @@ export default function FutureSwimSection() {
               </div>
             </div>
 
-            <div className="relative z-20 shrink-0">
-              <NutritionFactsLabel />
+            <div className="relative z-20 w-full max-w-[240px] shrink-0 sm:max-w-[260px]">
+              <Image
+                src="/nutritions.jpeg"
+                alt="Nutrition Facts"
+                width={604}
+                height={1600}
+                className="h-auto w-full"
+                sizes="260px"
+              />
             </div>
 
             <div className="relative z-20 flex w-full max-w-md shrink-0 flex-col justify-start pt-2 lg:max-w-sm lg:pt-4">
